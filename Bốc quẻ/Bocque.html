@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bốc Quẻ Đầu Năm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            position: relative;
+            min-height: 90vh;
+            padding-bottom: 50px;
+
+        }
+
+        #batHuongContainer {
+            position: relative;
+            margin: 20px auto;
+            width: 400px;
+            height: 400px;
+            background-image: url('bathuong.png');
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #bocQueBtn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #ketQua {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .chuKy {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            color: red;
+            font-family: 'Great Vibes', cursive;
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="batHuongContainer">
+    </div>
+    <button id="bocQueBtn" onclick="bocQue()">Bốc Quẻ</button>
+    <p id="ketQua"></p>
+
+    <div class="chuKy">By Thành Tâmm</div>
+
+    <script>
+        function bocQue() {
+            var duBaoNamMoi = [
+                "Năm nay là một năm đầy thách thức, nhưng cũng chứa đầy cơ hội. Hãy sẵn sàng đối mặt và vượt qua.",
+                "Năm này sẽ là một năm tốt lành về mặt tài chính. Hãy tận dụng tốt các cơ hội đầu tư.",
+                "Gia đình sẽ là nguồn hỗ trợ vững chắc cho bạn trong năm nay. Hãy dành thời gian quý báu bên họ.",
+                "Sức khỏe cần được chú trọng trong năm nay. Đừng quên tập thể dục đều đặn và ăn uống lành mạnh.",
+                "Năm nay là thời điểm thích hợp để bạn thực hiện những thay đổi lớn trong sự nghiệp của mình.",
+                "Tình yêu sẽ nở rộ trong năm nay. Đối với những ai đang độc thân, có thể bạn sẽ gặp người ấy.",
+                "Hãy dành thời gian để nâng cao kỹ năng và kiến thức của mình. Việc học hỏi sẽ mở ra nhiều cửa cơ hội mới.",
+                "Du lịch sẽ mang lại cho bạn những trải nghiệm quý giá và cơ hội mở rộng tầm nhìn trong năm nay.",
+                "Trong năm nay, những mối quan hệ gia đình và tình cảm sẽ trở nên sâu đậm hơn. Hãy chăm sóc và nuôi dưỡng tình cảm với người thân yêu của bạn. Đối với những ai đang trong một mối quan hệ, đây là thời điểm tuyệt vời để xây dựng sự gắn kết và hiểu biết lẫn nhau sâu sắc hơn. Đối với những ai đang tìm kiếm tình yêu, hãy mở lòng mình và chào đón những khả năng mới. Tình yêu có thể xuất hiện từ những nơi bạn ít mong đợi nhất. Gia đình sẽ là nguồn hỗ trợ tinh thần quan trọng, giúp bạn vượt qua mọi khó khăn trong cuộc sống.",
+                "Hãy nhớ rằng sự hiểu biết và tôn trọng lẫn nhau là nền tảng vững chắc cho mọi mối quan hệ hạnh phúc. Năm nay, việc chia sẻ cảm xúc và nguyện vọng của bạn sẽ giúp tăng cường mối liên kết với người thân.",
+                "Đây là thời điểm để bạn đối diện và giải quyết những vấn đề lâu dài trong mối quan hệ của mình. Sự cởi mở và thành thật sẽ dẫn lối cho bạn tới một tương lai tươi sáng hơn.",
+                "Năm mới sẽ đem lại cho bạn cơ hội phát triển sự nghiệp, hãy nắm bắt mọi cơ hội và không ngần ngại thách thức bản thân,",
+                "Sức khỏe của bạn sẽ cần được chăm sóc kỹ lưỡng hơn trong năm nay. Đừng quên lắng nghe cơ thể và dành thời gian cho việc nghỉ ngơi và tái tạo năng lượng,",
+                "Tài chính của bạn sẽ có những chuyển biến tích cực, nhưng hãy nhớ rằng sự cẩn trọng trong chi tiêu vẫn là chìa khóa để duy trì sự ổn định,",
+                "Năm nay là thời điểm tốt để mở rộng mạng lưới quan hệ của bạn. Hãy chủ động kết nối với những người mới và xây dựng mối quan hệ bền vững,",
+                "Một hành trình mới sẽ mở ra, đem lại cho bạn những trải nghiệm và bài học quý giá. Hãy sẵn lòng chấp nhận và học hỏi từ mọi điều,",
+                "Đối với những ai đang tìm kiếm tình yêu, năm nay sẽ là một năm đầy hy vọng. Hãy mở lòng và sẵn sàng cho những mối quan hệ mới,",
+                "Những dự án cá nhân hoặc công việc mà bạn đã ấp ủ từ lâu sẽ bắt đầu thu hút sự chú ý và có tiến triển đáng kể. Hãy tiếp tục theo đuổi đam mê của mình với niềm tin và kiên nhẫn,",
+                "Sự sáng tạo và ý tưởng mới sẽ là chìa khóa cho sự thành công trong công việc và cuộc sống cá nhân của bạn. Đừng ngại thể hiện bản thân và thử nghiệm những ý tưởng độc đáo,"
+            ];
+            var queChon = duBaoNamMoi[Math.floor(Math.random() * duBaoNamMoi.length)];
+            document.getElementById("ketQua").innerHTML = "Quẻ dự báo cho bạn trong năm mới 2024 là: <br><br><strong>" + queChon + "</strong>";
+        }
+    </script>
+</body>
+
+</html>
